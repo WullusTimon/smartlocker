@@ -1,0 +1,312 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*:before,
+*:after {
+  font-size: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  margin: auto 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+
+h2 {
+  font-weight: 900;
+  font-size: 25px;
+  margin-top: 60px;
+}
+
+h3 {
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: -10px;
+}
+
+.titleUnlocked {
+  text-align: center;
+}
+
+p {
+  color: #787878;
+  line-height: 1.4;
+}
+
+.textSmall {
+  font-size: 14px;
+}
+
+.blueText {
+  color: #0500FC;
+}
+
+.blueButton {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  align-content: center;
+  color: white;
+  background-color: #0500FC;
+  border-radius: 5px;
+  padding: 10px 25px 10px 25px;
+  box-shadow: 0px 4px 10px 0px rgba(5, 0, 252, 0.25);
+  border: none;
+  text-align: center;
+}
+
+.redButton {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  align-content: center;
+  color: white;
+  background-color: rgb(255, 71, 71);
+  border-radius: 5px;
+  padding: 10px 25px 10px 25px;
+  box-shadow: 0px 4px 10px 0px rgba(255, 71, 71, 0.25);
+  margin-bottom: 30px;
+  border: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+}
+
+.locker {
+  background-color: #0500FC;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0px 4px 10px 0px rgba(5, 0, 252, 0.25);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.lockerImg {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.lockerInfo {
+  padding-left: 10px;
+}
+
+.geriefText {
+  color: white;
+  font-size: 12px;
+}
+
+.beschikbareLockers {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.oneLocker {
+  color: rgb(255, 71, 71);
+  background-color: rgb(255, 71, 71, 0.10);
+  padding: 10px 25px 10px 25px;
+  border: 2px solid rgb(255, 71, 71);
+  border-radius: 5px;
+}
+
+.infoBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.lockersDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.backButton {
+  margin-top: 30px;
+}
+
+.LockerDetailInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lockerImgGroot {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+.rapporteer {
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.rapporteerDiv {
+  margin-bottom: 50px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.unlocked {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.unlockedImg {
+  display: flex;
+  justify-content: center;
+}
+
+/* form */
+
+.form {
+  margin-top: 30px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.inputField {
+  padding: 10px 0px 10px 0px;
+  color: black;
+  font-size: 16px;
+  border-bottom: 2px solid #0500FC;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.label {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.submit {
+  margin-top: 50px;
+}
+
+/* popup */
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 10;
+  transition: 200ms ease-in-out;
+}
+
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popupForm {
+  padding: 15px 30px 15px 30px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sendAgain {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 30px;
+}
+
+.popupClose {
+  background-color: white;
+  border: none;
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popupOptions {
+  margin-top: 50px;
+}
+
+.popupReport {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 10;
+  transition: 200ms ease-in-out;
+  width: 80%;
+  padding: 20px;
+}
+
+.popupReport.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.reportOptions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.popupReportTitle {
+  padding-bottom: 10px;
+}
+

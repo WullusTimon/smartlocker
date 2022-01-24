@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Smart Locker</title>
+</head>
+
+<body>
+  <div class="detail">
+    <div>
+      <div class="backButton">
+        <a class="blueButton" href="../pages/lockerDetail.html">&#8592;</a>
+      </div>
+      <div>
+        <h2>Vul eerst het formulier in.</h2>
+        <p class="textSmall">Je moet eerst een formulier invullen voordat je de sportlocker met sportgerief kan openen.
+          Dit is voor ons
+          gemakkelijk als er iets ontbreekt na het sporten.</p>
+      </div>
+      <form id="form" class="form" action="">
+        <div class="formField">
+          <label class="label" for="fname">Voornaam<span class="blueText">*</span></label>
+          <input class="inputField" type="text" placeholder="John" required />
+        </div>
+        <div class="formField">
+          <label class="label" for="lname">Naam<span class="blueText">*</span></label>
+          <input class="inputField" type="text" placeholder="Doe" required />
+        </div>
+        <div class="formField">
+          <label class="label" for="email">E-mail<span class="blueText">*</span></label>
+          <input class="inputField" type="email" placeholder="john.doe@mail.com" required />
+        </div>
+        <div class="formField">
+          <label class="label" for="number">Telefoonnummer<span class="blueText">*</span></label>
+          <input class="inputField" type="number" placeholder="0491234567" maxlength="10" required />
+        </div>
+        <div class="submit">
+          <p class="textSmall">Er wordt eerst een bevestigingscode doorgestuurd via <span class="blueText">E-mail</span>
+            voordat u de locker kan openen.
+          </p>
+          <div class="button">
+            <input id="openPopup" class="blueButton" type="submit" value="Ontgrendel" />
+          </div>
+        </div>
+      </form>
+
+      <div class="popup" id="popup">
+        <button id="closePopup" class="popupClose">&times;</button>
+        <form class="popupForm" action="">
+          <div class="formField">
+            <label>Bevestigingscode</label>
+            <input class="inputField" type="number" placeholder="123456" minlength="6" maxlength="6">
+          </div>
+          <div class="popupOptions">
+            <div class="button"><a href="./lockerOpened.html" class="blueButton">Verifieer</a></div>
+            <p class="sendAgain">stuur opnieuw</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="overlay"></div>
+    
+    <script src="../js/verifyPopup.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

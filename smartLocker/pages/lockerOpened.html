@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Smart Locker</title>
+</head>
+
+<body>
+  <div class="detail">
+    <div class="unlocked">
+      <div class="unlockedImg"><img width="75" height="99" src="../assets/img/lock.png" alt="slot is Ontgrendeld"></div>
+      <h2 class="titleUnlocked">Ontgrendeld, Veel plezier!</h1>
+        <div class="button">
+          <a class="blueButton" href="./lockers.html">Home</a>
+        </div>
+    </div>
+
+
+    <div class="rapporteerDiv">
+      <h4 class="rapporteer">Iets mis?</h4>
+      <p>Is er iets mis met de locker? Ontbreekt er iets? Werkt het niet? Help ons door op report te drukken</p>
+      <div class="button">
+        <button id="openReportPopup" class="redButton">Rapporteer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popupReport" id="popupReport">
+    <div>
+      <h4 class="popupReportTitle">Bent u zeker?</h4>
+      <p>Zo ja, dan zal er een mail gestuurd worden naar ons.</p>
+    </div>
+    <div class="reportOptions">
+      <p class="reportOption blueText">Ja</button>
+      <p id="closeReportPopup" class="reportOption">Nee</button>
+    </div>
+  </div>
+  <div id="overlay"></div>
+
+  
+  <script src="../js/reportPopup.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
