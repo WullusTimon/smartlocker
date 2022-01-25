@@ -53,20 +53,23 @@
 
       <div class="popup" id="popup">
         <button id="closePopup" class="popupClose">&times;</button>
-        <form class="popupForm" action="">
+        <form class="popupForm" action="../pages/lockerOpened.html">
           <div class="formField">
             <label>Bevestigingscode</label>
-            <input class="inputField" type="number" placeholder="123456" minlength="6" maxlength="6">
+            <input class="inputField" type="text" placeholder="123456" minlength="6" maxlength="6" required>
           </div>
           <div class="popupOptions">
-            <div class="button"><a href="./lockerOpened.html" class="blueButton">Verifieer</a></div>
+            <div class="button">
+              <!-- <a href="./lockerOpened.html" class="blueButton">Verifieer</a> -->
+              <input class="blueButton" type="submit" value="Verifieer">
+            </div>
             <p class="sendAgain">stuur opnieuw</button>
           </div>
         </form>
       </div>
     </div>
     <div id="overlay"></div>
-    
+
     <script src="../js/verifyPopup.js"></script>
     <script src="../js/script.js"></script>
 </body>
