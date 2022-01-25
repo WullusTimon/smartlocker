@@ -22,7 +22,7 @@
   }
 
   const closeReport = () => {
-    console.log("close")
+    console.log("close report popup")
     popupReport.classList.remove('active')
     overlay.classList.remove('active')
   }
