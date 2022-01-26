@@ -27,19 +27,23 @@
       <form id="form" class="form">
         <div class="formField">
           <label class="label" for="fname">Voornaam<span class="blueText">*</span></label>
-          <input class="inputField" type="text" placeholder="John" required />
+          <input class="inputField" id="js-inputFName" type="text" placeholder="John" required />
+          <span class="inputFieldErrorText" id="js-FNameError"></span>
         </div>
         <div class="formField">
           <label class="label" for="lname">Naam<span class="blueText">*</span></label>
-          <input class="inputField" type="text" placeholder="Doe" required />
+          <input class="inputField" id="js-inputName" type="text" placeholder="Doe" required />
+          <span class="inputFieldErrorText" id="js-NameError"></span>
         </div>
         <div class="formField">
           <label class="label" for="email">E-mail<span class="blueText">*</span></label>
-          <input class="inputField" type="email" placeholder="john.doe@mail.com" required />
+          <input class="inputField" id="js-inputEmail" type="email" placeholder="john.doe@mail.com" required />
+          <span class="inputFieldErrorText" id="js-EmailError"></span>
         </div>
         <div class="formField">
           <label class="label" for="number">Telefoonnummer<span class="blueText">*</span></label>
-          <input class="inputField" type="number" placeholder="0491234567" maxlength="10" required />
+          <input class="inputField" id="js-inputPhone" type="number" placeholder="0491234567" maxlength="10" required />
+          <span class="inputFieldErrorText" id="js-PhoneError"></span>
         </div>
         <div class="submit">
           <p class="textSmall">Er wordt eerst een bevestigingscode doorgestuurd via <span class="blueText">E-mail</span>
@@ -71,7 +75,7 @@
     <div id="overlay"></div>
 
     <script src="../js/verifyPopup.js"></script>
-    <script src="../js/script.js"></script>
+    <!-- <script src="../js/script.js"></script> -->
 </body>
 
 </html>
