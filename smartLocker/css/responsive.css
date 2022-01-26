@@ -1,0 +1,135 @@
+@media only screen and (max-width: 2500px) {
+
+  html {
+    padding: 50px;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .detail {
+    width: 40%;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(140, 140, 140, 0.25);
+    border-radius: 6px;
+    padding: 10px 60px 10px 60px;
+  }
+
+  .LockerDetailInfo {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  html {
+    padding: 30px;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .detail {
+    width: 40%;
+  }
+
+  .LockerDetailInfo {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    padding: 0px;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .detail {
+    width: 50%;
+    background-color: none;
+    box-shadow: none;
+    border-radius: none;
+    padding: none;
+  }
+
+  .LockerDetailInfo {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  html {
+    padding: none;
+  }
+
+  .detail {
+    width: 60%;
+    background-color: none;
+    box-shadow: none;
+    border-radius: none;
+    padding: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    padding: none;
+  }
+
+  .detail {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    padding: none;
+  }
+
+  .detail {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  html {
+    padding: none;
+  }
+
+  .detail {
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    padding: none;
+  }
+
+  .detail {
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  html {
+    padding: none;
+  }
+
+  .detail {
+    width: 100%;
+    padding: 0px;
+  }
+}

@@ -1,1 +1,38 @@
-:root {}
+:root {
+
+  /* font-family */
+  --primary-font: 'Roboto', sans-serif;
+
+  /* font-size */
+  --large-title: 30px;
+  --medium-title: 25px;
+  --small-title: 18px;
+  --xsmall-title: 16px;
+
+  --body-text: 16px;
+  --small-text: 14px;
+  --xsmall-text: 12px;
+
+  /* font-weight */
+  --weight-bold: 900;
+  --weight-regular: 400;
+
+  /* colors */
+  --color1: rgb(120, 120, 120);
+  --color2: rgb(255, 255, 255);
+  --color3: rgb(0, 0, 0);
+  --primary-color: rgb(5, 0, 252);
+  --secundary-color: rgb(255, 71, 71);
+  --secundary-color-opacity: rgb(255, 71, 71, 0.10);
+
+  /* shadows */
+  --primary-shadow: 0px 4px 10px 0px rgba(5, 0, 252, 0.25);
+  --secundary-shadow: 0px 4px 10px 0px rgba(255, 71, 71, 0.25);
+
+  /* radius */
+  --border-radius-button: 5px;
+  --border-radius-popup: 10px;
+
+  /* padding */
+  --padding-button: 10px 25px 10px 25px;
+}
