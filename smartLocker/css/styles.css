@@ -224,6 +224,20 @@ p {
   border-left: none;
   border-right: none;
 }
+.inputFieldError {
+  padding: 10px 0px 10px 0px;
+  color: black;
+  font-size: 16px;
+  border-bottom: 2px solid red;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.inputFieldErrorText{
+  color:red;
+  font-size: 12px;
+  padding-top: 10px;
+}
 
 .label {
   margin-bottom: 10px;
