@@ -117,6 +117,7 @@ p {
   box-shadow: var(--primary-shadow);
   border-radius: var(--border-radius-button);
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .lockerDisabled {
@@ -148,6 +149,7 @@ p {
 .beschikbareLockers {
   margin-bottom: 60px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
