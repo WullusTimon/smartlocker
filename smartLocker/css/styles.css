@@ -119,6 +119,15 @@ p {
   text-decoration: none;
 }
 
+.lockerDisabled {
+  background-color: var(--primary-color-disabled);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: var(--disabled-shadow);
+  border-radius: var(--border-radius-button);
+  text-decoration: none;
+}
+
 .lockerImg {
   border-radius: 0px 5px 5px 0px;
 }
@@ -126,6 +135,10 @@ p {
 .lockerInfo {
   padding-left: 10px;
 }
+
+/* .hidden {
+  display: none;
+} */
 
 .geriefText {
   color: var(--color2);
@@ -201,6 +214,12 @@ p {
 .unlockedImg {
   display: flex;
   justify-content: center;
+}
+
+.textUnlocked {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -10px;
 }
 
 /* form */

@@ -22,12 +22,14 @@
   --color2: rgb(255, 255, 255);
   --color3: rgb(0, 0, 0);
   --primary-color: rgb(5, 0, 252);
+  --primary-color-disabled: rgb(215, 215, 215);
   --secundary-color: rgb(255, 71, 71);
   --secundary-color-opacity: rgb(255, 71, 71, 0.10);
 
   /* shadows */
   --primary-shadow: 0px 4px 10px 0px rgba(5, 0, 252, 0.25);
   --secundary-shadow: 0px 4px 10px 0px rgba(255, 71, 71, 0.25);
+  --disabled-shadow: 0px 4px 10px 0px rgba(215, 215, 215, 0.25);
 
   /* radius */
   --border-radius-button: 5px;
