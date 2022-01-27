@@ -41,7 +41,13 @@ const getCoffeeAPI = function(){
 };
 
 const showCoffee = function (json){
-    console.log(json) 
+    let name = document.getElementById("js-Name")
+    let material = document.getElementById("js-Materiaal")
+
+    name.innerHTML = json[0].displayname
+    material.innerHTML = json[0].materials
+    
+    console.log(json[0].materials)
 }
 
 
