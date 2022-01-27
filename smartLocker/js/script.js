@@ -20,10 +20,10 @@ let getDOMElements = () => {
     // card.idgredients = document.querySelector(".js-ingredients")
     // console.log(card.button)
     
-    getCoffeeAPI()
+    getSmartlockerAPI()
 }
 
-const getCoffeeAPI = function(){
+const getSmartlockerAPI = function(){
 	let url = `https://smartlockerg3.azurewebsites.net/api/lockers`;
 	fetch(url)
 		.then(req => {
@@ -35,19 +35,54 @@ const getCoffeeAPI = function(){
 		})
 		.then(json => {
 			console.log(json);
-            showCoffee(json)
+            showSmartlocker(json)
 		});
     
 };
 
-const showCoffee = function (json){
-    let name = document.getElementById("js-Name")
-    let material = document.getElementById("js-Materiaal")
+const showSmartlocker = function (json){
+    let pageLocker = document.getElementById("js-page-lockerlanding")
+    let pageLockerDetail = document.getElementById("js-page-lockerdetail")
+    if(pageLocker)
+    {
+        let locker = document.getElementById("js-locker")
+        let name = document.getElementById("js-Name")
+        let material = document.getElementById("js-Materiaal")
 
-    name.innerHTML = json[0].displayname
-    material.innerHTML = json[0].materials
+        name.innerHTML = json[0].displayname
+        material.innerHTML = json[0].materials
+
+        let htmlString_locker = " "
+        for(const item of json)
+        {
+            if(item.status == "maintenance"){
+                htmlString_locker += `<a class="locker"  href="../pages/lockerDetail.html">
+                                        <!-- <div class="locker"> -->
+                                        <div class="lockerInfo">
+                                            <h3 id="js-Name">${item.displayname}</h3>
+                                            <p class="geriefText" id="js-Materiaal">${item.materials}</p>
+                                        </div>
+                                        <img class="lockerImg" src="../assets/img/locker1.png" alt="foto van een locker">
+                                        <!-- </div> -->
+                                    </a>
+                                    `
+            }
+            
+        }
+        locker.innerHTML = htmlString_locker
+
+    }
+    if(pageLockerDetail)
+    {
+        let lockerType = document.querySelector(".jsType")
+        let lockerLocation = document.querySelector(".jsLocatie")
+        lockerType.innerHTML = json[0].materials
+        lockerLocation.innerHTML = json[0].displayname
+    }
+
     
-    console.log(json[0].materials)
+    
+    //console.log(json[0].materials)
 }
 
 
