@@ -1,43 +1,49 @@
 {
   // report popup
 
-  const openReportButton = document.getElementById('openReportPopup')
-  const closeReportButton = document.getElementById('closeReportPopup')
-  const popupReport = document.getElementById('popupReport')
+  const openReportButton = document.querySelectorAll('[data-report-target]')
+  const closeReportButton = document.querySelectorAll('[data-closereport-target]')
   const overlay = document.getElementById('overlay')
-  const yesReport = document.getElementById('yesReport')
-  // const disabled = document.getElementById('lockerDisabled')
-  // const enabled = document.getElementById('lockerEnabled')
+  const yesReport = document.querySelectorAll('[data-reportyes-target]')
 
-  yesReport.addEventListener('click', () => {
-    pushToDisable();
+  yesReport.forEach(button => {
+    button.addEventListener('click', (e) => {
+      pushToDisable()
+    })
+  })
+  openReportButton.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const popupReport = document.querySelector(button.dataset.reportTarget)
+      e.preventDefault();
+      openReport(popupReport)
+    })
   })
 
-  openReportButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    openReport()
+  closeReportButton.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const popupReport = button.closest('.popupReport')
+      e.preventDefault();
+      closeReport(popupReport)
+    })
   })
 
-  closeReportButton.addEventListener('click', () => {
-    closeReport()
-  })
-
-  const openReport = () => {
-    console.log("open report popup")
+  const openReport = (popupReport) => {
+    if (popupReport == null) return
     popupReport.classList.add('active')
     overlay.classList.add('active')
+
+    console.log("open report popup")
   }
 
-  const closeReport = () => {
-    console.log("close report popup")
+  const closeReport = (popupReport) => {
+    if (popupReport == null) return
     popupReport.classList.remove('active')
     overlay.classList.remove('active')
+    console.log("close report popup")
   }
 
   const pushToDisable = () => {
     console.log('disabled')
     window.location.href = "../pages/lockers.html";
-    // enabled.classList.add('hidden')
-    // disabled.classList.remove('hidden')
   }
 }

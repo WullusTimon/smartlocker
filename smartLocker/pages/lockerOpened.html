@@ -28,7 +28,7 @@
       <h4 class="rapporteer">Iets mis?</h4>
       <p>Is er iets mis met de locker? Ontbreekt er iets? Werkt het niet? Help ons door op report te drukken</p>
       <div class="button">
-        <button id="openReportPopup" class="redButton">Rapporteer</button>
+        <button data-report-target="#popupReport" id="openReportPopup" class="redButton">Rapporteer</button>
       </div>
     </div>
   </div>
@@ -39,8 +39,8 @@
       <p>Zo ja, dan zal er een mail gestuurd worden naar ons.</p>
     </div>
     <div class="reportOptions">
-      <p class="reportOption blueText">Ja</button>
-      <p id="closeReportPopup" class="reportOption">Nee</button>
+      <p data-reportyes-target class="reportOption blueText">Ja</button>
+      <p data-closereport-target id="closeReportPopup" class="reportOption">Nee</button>
     </div>
   </div>
   <div id="overlay"></div>

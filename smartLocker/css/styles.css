@@ -131,6 +131,7 @@ p {
 
 .lockerImg {
   border-radius: 0px 5px 5px 0px;
+  width: 100%;
 }
 
 .lockerInfo {
@@ -253,6 +254,7 @@ p {
   border-top: none;
   border-left: none;
   border-right: none;
+  cursor: pointer;
 }
 .inputFieldErrorText{
   color:red;
@@ -346,6 +348,7 @@ p {
 .reportOptions {
   display: flex;
   justify-content: space-around;
+  cursor: pointer;
 }
 
 .popupReportTitle {
