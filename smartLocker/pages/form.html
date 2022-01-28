@@ -13,10 +13,10 @@
 </head>
 
 <body>
-  <div class="detail height">
+  <div class="detail height" id="js-page-lockerform">
     <div>
       <div class="backButton">
-        <a class="blueButton" href="../pages/lockerDetail.html">&#8592;</a>
+        <a class="blueButton" href="../pages/lockers.html">&#8592;</a>
       </div>
       <div>
         <h2>Vul eerst het formulier in.</h2>
@@ -57,15 +57,16 @@
 
       <div class="popup" id="popup">
         <button id="closePopup" class="popupClose">&times;</button>
-        <form class="popupForm" action="../pages/lockerOpened.html">
+        <form class="popupForm" > <!-- action="../pages/lockerOpened.html" -->
           <div class="formField">
             <label>Bevestigingscode</label>
-            <input class="inputField" type="text" placeholder="123456" minlength="6" maxlength="6" required>
+            <input class="inputField" type="text" id="js-verify" placeholder="123456" minlength="6" maxlength="6" required>
+            <span class="verifyWrong" id="verifyWrong" hidden>Foute code</span>
           </div>
           <div class="popupOptions">
             <div class="button">
               <!-- <a href="./lockerOpened.html" class="blueButton">Verifieer</a> -->
-              <input class="blueButton" type="submit" value="Verifieer">
+              <input class="blueButton" id="js-btnsend" type="button" value="Verifieer">
             </div>
             <p class="sendAgain">stuur opnieuw</button>
           </div>
@@ -75,7 +76,7 @@
     <div id="overlay"></div>
 
     <script src="../js/verifyPopup.js"></script>
-    <!-- <script src="../js/script.js"></script> -->
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

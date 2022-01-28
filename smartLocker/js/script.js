@@ -1,25 +1,5 @@
 console.log("test   ")
 let getDOMElements = () => {
-
-    // form.email.input = document.querySelector(".js-form-email-input");
-    // form.email.message = document.querySelector(".js-form-email-message");
-    // form.email.field = document.querySelector(".js-form-email-field");
-    
-    // form.name.input = document.querySelector(".js-form-name-input");
-    // form.name.message = document.querySelector(".js-form-name-message");
-    // form.name.field = document.querySelector(".js-form-name-field");
-
-    // form.submit = document.querySelector(".js-form-submit");
-
-
-    // card.title = document.querySelector(".js-card__title");
-    // card.desc = document.querySelector(".js-card__desc");
-    // card.image = document.querySelector(".js-card__image");
-    
-    // card.button = document.querySelector(".js-button");
-    // card.idgredients = document.querySelector(".js-ingredients")
-    // console.log(card.button)
-    
     getSmartlockerAPI()
 }
 
@@ -41,22 +21,23 @@ const getSmartlockerAPI = function(){
 };
 
 const showSmartlocker = function (json){
+
     let pageLocker = document.getElementById("js-page-lockerlanding")
     let pageLockerDetail = document.getElementById("js-page-lockerdetail")
+    let pageLockerForm = document.getElementById("js-page-lockerform")
+
     if(pageLocker)
     {
         let locker = document.getElementById("js-locker")
-        let name = document.getElementById("js-Name")
-        let material = document.getElementById("js-Materiaal")
-
-        name.innerHTML = json[0].displayname
-        material.innerHTML = json[0].materials
+        let lockerNietbeschikbaar = document.getElementById("js-lockerDisabled")
 
         let htmlString_locker = " "
+        let htmlString_lockerNON = " "
+
         for(const item of json)
         {
-            if(item.status == "maintenance"){
-                htmlString_locker += `<a class="locker"  href="../pages/lockerDetail.html">
+            if(item.status == "locked"){
+                htmlString_locker += `<a class="locker"  href="../pages/lockerDetail.html?id=${item.lockeruuid}">
                                         <!-- <div class="locker"> -->
                                         <div class="lockerInfo">
                                             <h3 id="js-Name">${item.displayname}</h3>
@@ -67,22 +48,49 @@ const showSmartlocker = function (json){
                                     </a>
                                     `
             }
+            else{
+                htmlString_lockerNON += `<a class="lockerDisabled" href="../pages/lockerDetail.html?id=${item.lockeruuid}">
+                                        <div class="lockerInfo">
+                                        <h3>${item.displayname}</h3>
+                                        <p class="geriefText">${item.materials}</p>
+                                        </div>
+                                        <img class="lockerImg" src="../assets/img/locker1.png" alt="foto van een locker">
+                            
+                                    </a>`
+            }
             
         }
         locker.innerHTML = htmlString_locker
-
+        lockerNietbeschikbaar.innerHTML = htmlString_lockerNON
     }
     if(pageLockerDetail)
     {
-        let lockerType = document.querySelector(".jsType")
-        let lockerLocation = document.querySelector(".jsLocatie")
-        lockerType.innerHTML = json[0].materials
-        lockerLocation.innerHTML = json[0].displayname
-    }
+        const queryString = window.location.search;
+        const lst = queryString.split("=");
+        console.log(lst[1])
+        for(const item of json)
+        {
+            if (item.lockeruuid == lst[1])
+            {
+                let lockerType = document.querySelector(".jsType")
+                let lockerLocation = document.querySelector(".jsLocatie")
+                let lockerName = document.getElementById("js-displayname")
+                let lockerButton = document.getElementById("js-button")
 
-    
-    
-    //console.log(json[0].materials)
+                lockerButton.href = `../pages/form.html?id=${item.lockeruuid}`
+                lockerType.innerHTML = item.materials
+                lockerLocation.innerHTML = item.location
+                lockerName.innerHTML = item.displayname
+            }
+        }
+    }
+    if(pageLockerForm)
+    {
+        const queryString = window.location.search;
+        const lst = queryString.split("=");
+        console.log(lst[1])
+        console.log("form page")
+    }
 }
 
 
