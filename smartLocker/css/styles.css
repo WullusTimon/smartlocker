@@ -127,6 +127,7 @@ p {
   box-shadow: var(--disabled-shadow);
   border-radius: var(--border-radius-button);
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .lockerImg {
@@ -137,7 +138,11 @@ p {
 .lockerInfo {
   padding-left: 10px;
 }
-
+.verifyWrong{
+  color: red;
+  font-size: 15px;
+  margin-top: 5px;
+}
 /* .hidden {
   display: none;
 } */
