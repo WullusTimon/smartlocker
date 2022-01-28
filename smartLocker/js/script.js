@@ -73,6 +73,16 @@ const showSmartlocker = function (json) {
                 let lockerLocation = document.querySelector(".jsLocatie")
                 let lockerName = document.getElementById("js-displayname")
                 let lockerButton = document.getElementById("js-button")
+                let lockerRapporteer = document.getElementById("openReportPopup")
+
+                console.log(item.status)
+                if (item.status == "maintenance" || item.status == "unlocked"){
+                    lockerButton.classList.remove("blueButton")
+                    lockerButton.classList.add("greyButton")
+
+                    lockerRapporteer.classList.remove("redButton")
+                    lockerRapporteer.classList.add("greyButton")
+                }
 
                 lockerButton.href = `../pages/form.html?id=${item.lockeruuid}`
                 lockerType.innerHTML = item.materials

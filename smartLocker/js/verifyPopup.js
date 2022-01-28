@@ -42,7 +42,7 @@
     .then((response) => response.json())
     .then((data) => {
       console.log('Success:', data);
-      window.location.href = "../pages/lockerOpened.html"
+      window.location.href = `../pages/lockerOpened.html?id=${lst[1]}`
     })
     .catch((error) => {
       let verifyWrong = document.getElementById("verifyWrong")
