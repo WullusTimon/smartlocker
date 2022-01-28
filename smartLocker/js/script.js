@@ -31,8 +31,18 @@ const showSmartlocker = function (json) {
 
         let htmlString_locker = " "
         let htmlString_lockerNON = " "
-
+        let countText = document.querySelector(".oneLocker")
+        let count = 0
         for (const item of json) {
+            if(item.status == "locked"){
+                count = count +1
+            }
+            if (count == 0){
+                countText.innerHTML = `Er is momenteel <strong>geen</strong> locker beschikbaar`
+            }
+            else{
+                countText.innerHTML = `Beschikbare lockers:  <strong>${count}</strong> `
+            }
             if (item.status == "locked") {
                 htmlString_locker += `<a class="locker"  href="../pages/lockerDetail.html?id=${item.lockeruuid}">
                                         <!-- <div class="locker"> -->
