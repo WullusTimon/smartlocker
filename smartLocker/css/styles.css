@@ -73,6 +73,20 @@ p {
   border: none;
   text-align: center;
 }
+.greyButton{
+  text-decoration: none;
+  font-family: var(--primary-font);
+  font-weight: var(--weight-bold);
+  align-content: center;
+  color: var(--color2);
+  background-color: var(--color1);
+  border-radius: var(--border-radius-button);
+  padding: var(--padding-button);
+  box-shadow: var(--disabled-shadow);
+  border: none;
+  text-align: center;
+  pointer-events: none;
+}
 
 .redButton {
   text-decoration: none;

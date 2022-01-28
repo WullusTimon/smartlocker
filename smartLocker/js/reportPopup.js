@@ -11,6 +11,7 @@
       pushToDisable()
     })
   })
+
   openReportButton.forEach(button => {
     button.addEventListener('click', (e) => {
       const popupReport = document.querySelector(button.dataset.reportTarget)
@@ -43,7 +44,27 @@
   }
 
   const pushToDisable = () => {
+    let pageLevel2 = document.getElementById("lockerlevel2")
+    let pageLevel1 = document.getElementById("js-page-lockerdetail")
+
+    if (pageLevel1){
+      LevelReport("1")
+    }
+    else{
+      LevelReport("2")
+    }
     console.log('disabled')
+    
     window.location.href = "../pages/lockers.html";
+  }
+  const LevelReport = (level) => {
+      const queryString = window.location.search;
+      const lst = queryString.split("=");
+      console.log(lst[1])
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", `https://smartlockerg3.azurewebsites.net/api/locker/${lst[1]}/report/${level}`);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.send()
   }
 }
