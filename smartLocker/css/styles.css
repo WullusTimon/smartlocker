@@ -138,6 +138,12 @@ p {
 .lockerInfo {
   padding-left: 10px;
 }
+
+.statusDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .verifyWrong{
   color: red;
   font-size: 15px;
@@ -228,6 +234,12 @@ p {
   text-align: center;
   margin-bottom: 30px;
   margin-top: -10px;
+}
+
+.condition {
+  color: orange;
+  font-size: var(--body-text);
+  font-weight: var(--weight-bold);
 }
 
 /* form */

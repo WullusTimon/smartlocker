@@ -1,42 +1,39 @@
-console.log("test   ")
 let getDOMElements = () => {
     getSmartlockerAPI()
 }
 
-const getSmartlockerAPI = function(){
-	let url = `https://smartlockerg3.azurewebsites.net/api/lockers`;
-	fetch(url)
-		.then(req => {
-			if (!req.ok) {
-				console.error('Error with fetch');
-			} else {
-				return req.json();
-			}
-		})
-		.then(json => {
-			console.log(json);
+const getSmartlockerAPI = function () {
+    let url = `https://smartlockerg3.azurewebsites.net/api/lockers`;
+    fetch(url)
+        .then(req => {
+            if (!req.ok) {
+                console.error('Error with fetch');
+            } else {
+                return req.json();
+            }
+        })
+        .then(json => {
+            console.log(json);
             showSmartlocker(json)
-		});
-    
+        });
+
 };
 
-const showSmartlocker = function (json){
+const showSmartlocker = function (json) {
 
     let pageLocker = document.getElementById("js-page-lockerlanding")
     let pageLockerDetail = document.getElementById("js-page-lockerdetail")
     let pageLockerForm = document.getElementById("js-page-lockerform")
 
-    if(pageLocker)
-    {
+    if (pageLocker) {
         let locker = document.getElementById("js-locker")
         let lockerNietbeschikbaar = document.getElementById("js-lockerDisabled")
 
         let htmlString_locker = " "
         let htmlString_lockerNON = " "
 
-        for(const item of json)
-        {
-            if(item.status == "locked"){
+        for (const item of json) {
+            if (item.status == "locked") {
                 htmlString_locker += `<a class="locker"  href="../pages/lockerDetail.html?id=${item.lockeruuid}">
                                         <!-- <div class="locker"> -->
                                         <div class="lockerInfo">
@@ -48,30 +45,30 @@ const showSmartlocker = function (json){
                                     </a>
                                     `
             }
-            else{
+            else {
                 htmlString_lockerNON += `<a class="lockerDisabled" href="../pages/lockerDetail.html?id=${item.lockeruuid}">
-                                        <div class="lockerInfo">
-                                        <h3>${item.displayname}</h3>
-                                        <p class="geriefText">${item.materials}</p>
+                                        <div class="lockerInfo statusDiv">
+                                        <div>
+                                            <h3>${item.displayname}</h3>
+                                            <p class="geriefText">${item.materials}</p>
+                                        </div>
+                                        <p class="geriefText condition">${item.status}</p>
                                         </div>
                                         <img class="lockerImg" src="../assets/img/locker1.png" alt="foto van een locker">
                             
                                     </a>`
             }
-            
+
         }
         locker.innerHTML = htmlString_locker
         lockerNietbeschikbaar.innerHTML = htmlString_lockerNON
     }
-    if(pageLockerDetail)
-    {
+    if (pageLockerDetail) {
         const queryString = window.location.search;
         const lst = queryString.split("=");
         console.log(lst[1])
-        for(const item of json)
-        {
-            if (item.lockeruuid == lst[1])
-            {
+        for (const item of json) {
+            if (item.lockeruuid == lst[1]) {
                 let lockerType = document.querySelector(".jsType")
                 let lockerLocation = document.querySelector(".jsLocatie")
                 let lockerName = document.getElementById("js-displayname")
@@ -84,8 +81,7 @@ const showSmartlocker = function (json){
             }
         }
     }
-    if(pageLockerForm)
-    {
+    if (pageLockerForm) {
         const queryString = window.location.search;
         const lst = queryString.split("=");
         console.log(lst[1])
@@ -96,15 +92,4 @@ const showSmartlocker = function (json){
 
 document.addEventListener('DOMContentLoaded', function () {
     getDOMElements();
-
-    // page.brew = document.querySelector(".js-page-brew");
-    // page.landing = document.querySelector(".js-page-landing");
-
-    // if (page.brew) {
-        
-    //     getCoffeeAPI();
-    // }
-    // if (page.landing) {
-    //     enableListeners();
-    // }
 });
