@@ -100,10 +100,11 @@
     jsNaam = document.getElementById("js-inputName")
     jsEmail = document.getElementById("js-inputEmail")
     jsPhoneNr = document.getElementById("js-inputPhone")
-
+    let nameformat = /^[a-z ,.'-]+$/
     console.log(jsVoorNaam.value.length)
     let state = false
-    if (jsVoorNaam.value.length < 3){
+
+    if (!jsVoorNaam.value.match(nameformat) || jsVoorNaam.value.length < 3){
       jsVoorNaam.classList.remove("inputField");
       jsVoorNaam.classList.add("inputFieldError");
       document.getElementById("js-FNameError").innerHTML = "Gelieve een geldige naam in te vullen"
@@ -116,7 +117,7 @@
       document.getElementById("js-FNameError").innerHTML = ""
     }
 
-    if (jsNaam.value.length < 3){
+    if (!jsNaam.value.match(nameformat) || jsNaam.value.length < 3){
       jsNaam.classList.remove("inputField")
       jsNaam.classList.add("inputFieldError")
       document.getElementById("js-NameError").innerHTML = "Gelieve een geldige naam in te vullen"
@@ -143,17 +144,21 @@
       document.getElementById("js-EmailError").innerHTML = ""
     }
 
-    if (jsPhoneNr.value == ""){
+    if (jsPhoneNr.value == "" || jsPhoneNr.value.length < 5){
       jsPhoneNr.classList.remove("inputField")
       jsPhoneNr.classList.add("inputFieldError")
       document.getElementById("js-PhoneError").innerHTML = "Gelieve een geldig telefoonnummer in te vullen"
       state = false
     }
     else{
-      state = true
-      jsPhoneNr.classList.remove("inputFieldError")
-      jsPhoneNr.classList.add("inputField")
-      document.getElementById("js-PhoneError").innerHTML = ""
+      if (state == true){
+        state = true
+      }else{
+        state = false
+        jsPhoneNr.classList.remove("inputFieldError")
+        jsPhoneNr.classList.add("inputField")
+        document.getElementById("js-PhoneError").innerHTML = ""
+      }
     }
     console.log(state)
     if (state){
