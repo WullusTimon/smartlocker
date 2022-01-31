@@ -163,9 +163,9 @@ p {
   font-size: 15px;
   margin-top: 5px;
 }
-/* .hidden {
+.hidden {
   display: none;
-} */
+}
 
 .geriefText {
   color: var(--color2);
@@ -292,6 +292,13 @@ p {
   color:red;
   font-size: 12px;
   padding-top: 10px;
+}
+.ErrorLogText{
+  color:var(--secundary-color);
+  font-size: var(--small-text);
+  padding-top: 10px;
+  text-align: center;
+  border-bottom: 2px solid var(--secundary-color);
 }
 
 .label {

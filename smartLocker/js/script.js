@@ -1,9 +1,10 @@
 let getDOMElements = () => {
-    getSmartlockerAPI()
+    let url = `https://smartlockerg3.azurewebsites.net/api/lockers`;
+    getSmartlockerAPI(url)
 }
 
-const getSmartlockerAPI = function () {
-    let url = `https://smartlockerg3.azurewebsites.net/api/lockers`;
+const getSmartlockerAPI = function (url) {
+    
     fetch(url)
         .then(req => {
             if (!req.ok) {
@@ -24,6 +25,7 @@ const showSmartlocker = function (json) {
     let pageLocker = document.getElementById("js-page-lockerlanding")
     let pageLockerDetail = document.getElementById("js-page-lockerdetail")
     let pageLockerForm = document.getElementById("js-page-lockerform")
+    
 
     if (pageLocker) {
         let locker = document.getElementById("js-locker")
@@ -92,9 +94,28 @@ const showSmartlocker = function (json) {
 
                     lockerRapporteer.classList.remove("redButton")
                     lockerRapporteer.classList.add("greyButton")
+
+                    let ErrorLog = document.getElementById("ErrorLog")
+                    ErrorLog.classList.remove("hidden")
                 }
 
-                lockerButton.href = `../pages/form.html?id=${item.lockeruuid}`
+                btngebruik = document.getElementById("js-button")
+                btngebruik.addEventListener('click',() => {
+                    let theUrl = `https://smartlockerg3.azurewebsites.net/api/locker/${lst[1]}/status`
+                    let xmlHttp = new XMLHttpRequest();
+                    xmlHttp.open( "GET", theUrl, false ); 
+                    xmlHttp.send( null );
+                    test = xmlHttp.responseText
+                    console.log(xmlHttp.responseText);
+                    if (test =="locked"){
+                        lockerButton.href = `../pages/form.html?id=${item.lockeruuid}`
+                    }
+                    else{
+                        lockerButton.href = `../pages/lockerDetail.html?id=${item.lockeruuid}`
+                    }
+                })
+                
+                
                 lockerType.innerHTML = item.materials
                 lockerLocation.innerHTML = item.location
                 lockerName.innerHTML = item.displayname
