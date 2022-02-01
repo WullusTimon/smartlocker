@@ -100,7 +100,7 @@
     jsNaam = document.getElementById("js-inputName")
     jsEmail = document.getElementById("js-inputEmail")
     jsPhoneNr = document.getElementById("js-inputPhone")
-    let nameformat = /^[a-z ,.'-]+$/
+    let nameformat = /^[a-zA-Z ,.'-]+$/
     console.log(jsVoorNaam.value.length)
     let state = false
 
