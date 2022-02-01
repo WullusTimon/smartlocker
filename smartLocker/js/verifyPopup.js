@@ -143,8 +143,8 @@
       jsEmail.classList.add("inputField")
       document.getElementById("js-EmailError").innerHTML = ""
     }
-
-    if (jsPhoneNr.value == "" || jsPhoneNr.value.length < 5){
+    let phoneFormat = /^(\+32|0)(\d){9}$/
+    if (jsPhoneNr.value == "" || jsPhoneNr.value.length < 5 || jsPhoneNr.value.match(phoneFormat)){
       jsPhoneNr.classList.remove("inputField")
       jsPhoneNr.classList.add("inputFieldError")
       document.getElementById("js-PhoneError").innerHTML = "Gelieve een geldig telefoonnummer in te vullen"
